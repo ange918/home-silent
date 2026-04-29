@@ -28,7 +28,7 @@ export default function Footer() {
     <footer className="mt-32 bg-[#0e0e0e] text-[#e8e6df]">
       <div className="mx-auto max-w-[1400px] px-6 py-20">
         {/* Big mark */}
-        <div className="border-b border-white/10 pb-14">
+        <div className="pb-14">
           <h3
             className="font-display text-[#f4eede]"
             style={{
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-[12px] text-white/50">
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 pt-6 text-[12px] text-white/50">
           <span>© 2014—2026 Maison Silencieuse · SAS au capital de 50 000 €</span>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-white">Mentions légales</a>

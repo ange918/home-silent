@@ -242,7 +242,7 @@ function Approach() {
           </p>
         </Reveal>
         <div className="md:col-span-8">
-          <Reveal stagger className="grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2">
+          <Reveal stagger className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {services.map((s) => (
               <div key={s.n} className="group bg-[#f3f3f1] p-8 transition-colors duration-500 hover:bg-white">
                 <div className="text-[12px] font-semibold tracking-[0.18em] text-[#ef7a2c]">{s.n}</div>

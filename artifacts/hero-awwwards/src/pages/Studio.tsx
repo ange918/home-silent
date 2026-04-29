@@ -69,7 +69,7 @@ export default function Studio() {
             Quatre métiers, sous un même toit.
           </h2>
         </Reveal>
-        <Reveal stagger className="mt-10 grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal stagger className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <div key={s.n} className="bg-[#f3f3f1] p-8 transition-colors duration-500 hover:bg-white">
               <div className="text-[12px] font-semibold tracking-[0.18em] text-[#ef7a2c]">{s.n}</div>
@@ -91,7 +91,7 @@ export default function Studio() {
             Quatorze mains, une attention.
           </h2>
         </Reveal>
-        <Reveal stagger className="mt-10 grid grid-cols-1 gap-px bg-black/10 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal stagger className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {team.map((m) => (
             <div
               key={m.name}

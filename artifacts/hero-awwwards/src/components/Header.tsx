@@ -28,7 +28,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="w-full border-b border-black/5 bg-[#f3f3f1]">
+    <header className="w-full bg-[#f3f3f1]">
       <div className="mx-auto flex h-[68px] max-w-[1400px] items-center gap-7 px-6">
         <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#111] text-[12px] font-black text-white">
@@ -111,7 +111,7 @@ export default function Header() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`flex items-center justify-between border-b border-black/10 py-5 text-[26px] font-semibold tracking-tight ${
+                  className={`flex items-center justify-between py-5 text-[26px] font-semibold tracking-tight ${
                     active ? "text-[#ef7a2c]" : "text-[#111]"
                   }`}
                   data-testid={`mobile-link-${l.label.toLowerCase()}`}
