@@ -12,18 +12,18 @@ type Member = {
 };
 
 const team: Member[] = [
-  { name: "Louis Paquet", role: "Fondateur · Direction artistique", bio: "Diplômé de l'École Camondo, après dix ans chez Joseph Dirand. Lauréat AD100 en 2022.", initials: "LP", bg: "#1f3b2d", fg: "#ffffff" },
-  { name: "Koki Hirano", role: "Architecte d'intérieur", bio: "Tokyo, Paris. Ancienne du studio Sou Fujimoto. Pilote nos projets hôteliers japonais.", initials: "KH", bg: "#f0d8c2", fg: "#1f1f1f" },
-  { name: "Kim Levan", role: "Designer mobilier", bio: "Diplômée de l'ENSCI, dirige notre atelier d'édition de mobilier sur mesure.", initials: "KL", bg: "#c2c8d0", fg: "#1f1f1f" },
-  { name: "Adrien Vanderpotte", role: "Chef de projet sénior", bio: "Architecte HMONP, supervise les chantiers résidentiels en France et Suisse.", initials: "AV", bg: "#2a2a2a", fg: "#ffffff" },
-  { name: "Florent Roux-Durraffourt", role: "Scénographie & matières", bio: "Ancien de la Casa Lapin de Lisbonne. Compose les ambiances et les bibliothèques de matières.", initials: "FR", bg: "#b9b6a8", fg: "#1f1f1f" },
-  { name: "Pauline Ostermann", role: "Direction de production", bio: "Pilote les budgets, les délais et l'orchestration des artisans partenaires.", initials: "PO", bg: "#ef7a2c", fg: "#ffffff" },
+  { name: "Hugo Brassart", role: "Fondateur · Direction artistique", bio: "Diplômé de l'École Camondo, après dix ans chez Joseph Dirand. Lauréat AD100 en 2022.", initials: "HB", bg: "#1f3b2d", fg: "#ffffff" },
+  { name: "Margaux Lefranc", role: "Architecte d'intérieur", bio: "Formée à Paris et Lisbonne, ancienne du studio Sou Fujimoto. Pilote nos projets hôteliers internationaux.", initials: "ML", bg: "#f0d8c2", fg: "#1f1f1f" },
+  { name: "Léa Vidal", role: "Designer mobilier", bio: "Diplômée de l'ENSCI, dirige notre atelier d'édition de mobilier sur mesure.", initials: "LV", bg: "#c2c8d0", fg: "#1f1f1f" },
+  { name: "Antoine Chaumet", role: "Chef de projet sénior", bio: "Architecte HMONP, supervise les chantiers résidentiels en France et Suisse.", initials: "AC", bg: "#2a2a2a", fg: "#ffffff" },
+  { name: "Théo Berland", role: "Scénographie & matières", bio: "Ancien de la Casa Lapin de Lisbonne. Compose les ambiances et les bibliothèques de matières.", initials: "TB", bg: "#b9b6a8", fg: "#1f1f1f" },
+  { name: "Camille Roussel", role: "Direction de production", bio: "Pilote les budgets, les délais et l'orchestration des artisans partenaires.", initials: "CR", bg: "#ef7a2c", fg: "#ffffff" },
 ];
 
 const milestones = [
-  { y: "2014", t: "Fondation à Paris", d: "Louis Paquet quitte le studio Dirand et fonde Maison Silencieuse, rue de Sévigné." },
+  { y: "2014", t: "Fondation à Paris", d: "Hugo Brassart quitte le studio Dirand et fonde Maison Silencieuse, rue de Sévigné." },
   { y: "2017", t: "Premier hôtel", d: "Livraison du Mas de Lourmarin, première commande hôtelière du studio." },
-  { y: "2019", t: "Atelier mobilier", d: "Ouverture de l'atelier d'édition à Lyon-Confluence avec Kim Levan." },
+  { y: "2019", t: "Atelier mobilier", d: "Ouverture de l'atelier d'édition à Lyon-Confluence avec Léa Vidal." },
   { y: "2022", t: "Reconnaissance internationale", d: "Trois projets primés en Italie, Japon et Portugal. Entrée au AD100." },
   { y: "2024", t: "Antenne lyonnaise", d: "Quatorze collaborateurs aujourd'hui, deux adresses, un seul ton." },
 ];

@@ -13,11 +13,11 @@ type TeamMember = {
 };
 
 const team: TeamMember[] = [
-  { name: "Louis Paquet", role: "Direction artistique", initials: "LP", bg: "#1f3b2d", fg: "#ffffff", lead: true },
-  { name: "Koki Hirano", role: "Architecte d'intérieur", initials: "KH", bg: "#f0d8c2", fg: "#1f1f1f" },
-  { name: "Kim Levan", role: "Designer mobilier", initials: "KL", bg: "#c2c8d0", fg: "#1f1f1f" },
-  { name: "Adrien Vanderpotte", role: "Chef de projet", initials: "AV", bg: "#2a2a2a", fg: "#ffffff" },
-  { name: "Florent Roux-Durraffourt", role: "Scénographie", initials: "FR", bg: "#b9b6a8", fg: "#1f1f1f" },
+  { name: "Hugo Brassart", role: "Direction artistique", initials: "HB", bg: "#1f3b2d", fg: "#ffffff", lead: true },
+  { name: "Margaux Lefranc", role: "Architecte d'intérieur", initials: "ML", bg: "#f0d8c2", fg: "#1f1f1f" },
+  { name: "Léa Vidal", role: "Designer mobilier", initials: "LV", bg: "#c2c8d0", fg: "#1f1f1f" },
+  { name: "Antoine Chaumet", role: "Chef de projet", initials: "AC", bg: "#2a2a2a", fg: "#ffffff" },
+  { name: "Théo Berland", role: "Scénographie", initials: "TB", bg: "#b9b6a8", fg: "#1f1f1f" },
 ];
 
 function Avatar({ m }: { m: TeamMember }) {
