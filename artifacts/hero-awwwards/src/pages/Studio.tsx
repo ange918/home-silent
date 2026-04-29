@@ -13,7 +13,7 @@ type Member = {
 
 const team: Member[] = [
   { name: "Louis Paquet", role: "Fondateur · Direction artistique", bio: "Diplômé de l'École Camondo, après dix ans chez Joseph Dirand. Lauréat AD100 en 2022.", initials: "LP", bg: "#1f3b2d", fg: "#ffffff" },
-  { name: "Koki Hirano", role: "Architecte d'intérieur", bio: "Tokyo–Paris, ancienne du studio Sou Fujimoto. Pilote nos projets hôteliers japonais.", initials: "KH", bg: "#f0d8c2", fg: "#1f1f1f" },
+  { name: "Koki Hirano", role: "Architecte d'intérieur", bio: "Tokyo, Paris. Ancienne du studio Sou Fujimoto. Pilote nos projets hôteliers japonais.", initials: "KH", bg: "#f0d8c2", fg: "#1f1f1f" },
   { name: "Kim Levan", role: "Designer mobilier", bio: "Diplômée de l'ENSCI, dirige notre atelier d'édition de mobilier sur mesure.", initials: "KL", bg: "#c2c8d0", fg: "#1f1f1f" },
   { name: "Adrien Vanderpotte", role: "Chef de projet sénior", bio: "Architecte HMONP, supervise les chantiers résidentiels en France et Suisse.", initials: "AV", bg: "#2a2a2a", fg: "#ffffff" },
   { name: "Florent Roux-Durraffourt", role: "Scénographie & matières", bio: "Ancien de la Casa Lapin de Lisbonne. Compose les ambiances et les bibliothèques de matières.", initials: "FR", bg: "#b9b6a8", fg: "#1f1f1f" },
@@ -93,13 +93,13 @@ export default function Studio() {
           <p className="text-[16px] leading-[1.7] text-[#3a3a38]">
             Maison Silencieuse a été fondée en 2014 sur une intuition simple : un lieu réussi est un
             lieu où l'on n'a plus envie de partir. Nous ne signons ni un style, ni une signature
-            visuelle. Nous écoutons d'abord — la lumière, le terrain, vos heures, vos manies — puis
+            visuelle. Nous écoutons d'abord la lumière, le terrain, vos heures, vos manies, puis
             nous dessinons.
           </p>
           <p className="mt-5 text-[16px] leading-[1.7] text-[#3a3a38]">
             Nous travaillons en équipe restreinte, en pleine maîtrise d'œuvre. Chaque projet est suivi
-            par un binôme architecte–scénographe et notre atelier mobilier. Tous nos meubles sur
-            mesure sont fabriqués en France, dans un rayon de 600 km autour de Lyon.
+            par un binôme architecte et scénographe, soutenu par notre atelier mobilier. Tous nos
+            meubles sur mesure sont fabriqués en France, dans un rayon de 600 km autour de Lyon.
           </p>
         </div>
       </Reveal>
