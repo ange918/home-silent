@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "qKdV1qkILDTuYAEikYMZI"
+uri = "file://attached_assets/generated_images/villa-ocra.png"
+type = "image"
+title = "villa ocra living room"
+
+[[generated]]
+id = "vJVzcOJ7vnHNTVs5fXmQ_"
+uri = "file://attached_assets/generated_images/appartement-haussmann.png"
+type = "image"
+title = "haussmann apartment"
+
+[[generated]]
+id = "OYmA6Y_4ay-qvDjKQ8eSW"
+uri = "file://attached_assets/generated_images/ryokan-kyoto.png"
+type = "image"
+title = "kyoto ryokan suite"
+
+[[generated]]
+id = "OirXINZ5GD7ETzfsapKZ9"
+uri = "file://attached_assets/generated_images/atelier-bureau.png"
+type = "image"
+title = "minimalist studio office"
+
+[[generated]]
+id = "ahbpbAGRjwkihV_W0KK06"
+uri = "file://attached_assets/generated_images/villa-mediterranee.png"
+type = "image"
+title = "mediterranean villa bathroom"
+
+[[generated]]
+id = "g1pp3dsOOk2p7nnHB2iKv"
+uri = "file://attached_assets/generated_images/chalet-megeve.png"
+type = "image"
+title = "alpine chalet"
