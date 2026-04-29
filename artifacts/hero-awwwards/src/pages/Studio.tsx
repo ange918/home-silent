@@ -1,4 +1,5 @@
 import { services } from "@/data/projects";
+import Reveal from "@/components/Reveal";
 
 const team = [
   { name: "Louis Paquet", role: "Fondateur · Direction artistique", bio: "Diplômé de l'École Camondo, après dix ans chez Joseph Dirand. Lauréat AD100 en 2022." },
@@ -19,11 +20,11 @@ const milestones = [
 
 export default function Studio() {
   return (
-    <main className="mx-auto max-w-[1400px] px-6 pt-12">
+    <main className="anim-page mx-auto max-w-[1400px] px-6 pt-12">
       <div className="text-center">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Studio</div>
+        <div className="anim-up text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Studio</div>
         <h1
-          className="mt-3 font-display text-[#0e0e0e]"
+          className="anim-hero mt-3 font-display text-[#0e0e0e]"
           style={{ fontSize: "clamp(48px, 9vw, 156px)", lineHeight: 0.95, letterSpacing: "-0.04em", fontWeight: 900 }}
           data-testid="text-page-title"
         >
@@ -32,7 +33,7 @@ export default function Studio() {
       </div>
 
       {/* Intro */}
-      <section className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-12">
+      <Reveal as="section" className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Manifeste</div>
           <p
@@ -55,58 +56,68 @@ export default function Studio() {
             mesure sont fabriqués en France, dans un rayon de 600 km autour de Lyon.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* Services */}
       <section id="services" className="mt-24">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Savoir-faire</div>
-        <h2
-          className="mt-3 font-display text-[#0e0e0e]"
-          style={{ fontSize: "clamp(32px, 4.5vw, 64px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
-        >
-          Quatre métiers, sous un même toit.
-        </h2>
-        <div className="mt-10 grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Savoir-faire</div>
+          <h2
+            className="mt-3 font-display text-[#0e0e0e]"
+            style={{ fontSize: "clamp(32px, 4.5vw, 64px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
+          >
+            Quatre métiers, sous un même toit.
+          </h2>
+        </Reveal>
+        <Reveal stagger className="mt-10 grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
-            <div key={s.n} className="bg-[#f3f3f1] p-8">
+            <div key={s.n} className="bg-[#f3f3f1] p-8 transition-colors duration-500 hover:bg-white">
               <div className="text-[12px] font-semibold tracking-[0.18em] text-[#ef7a2c]">{s.n}</div>
               <div className="mt-3 text-[20px] font-semibold tracking-tight text-[#0e0e0e]">{s.title}</div>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-[#3a3a38]">{s.body}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* Team */}
       <section className="mt-24">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Équipe</div>
-        <h2
-          className="mt-3 font-display text-[#0e0e0e]"
-          style={{ fontSize: "clamp(32px, 4.5vw, 64px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
-        >
-          Quatorze mains, une attention.
-        </h2>
-        <div className="mt-10 grid grid-cols-1 gap-px bg-black/10 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Équipe</div>
+          <h2
+            className="mt-3 font-display text-[#0e0e0e]"
+            style={{ fontSize: "clamp(32px, 4.5vw, 64px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
+          >
+            Quatorze mains, une attention.
+          </h2>
+        </Reveal>
+        <Reveal stagger className="mt-10 grid grid-cols-1 gap-px bg-black/10 md:grid-cols-2 lg:grid-cols-3">
           {team.map((m) => (
-            <div key={m.name} className="bg-[#f3f3f1] p-7" data-testid={`card-member-${m.name.split(" ")[0].toLowerCase()}`}>
+            <div
+              key={m.name}
+              className="bg-[#f3f3f1] p-7 transition-colors duration-500 hover:bg-white"
+              data-testid={`card-member-${m.name.split(" ")[0].toLowerCase()}`}
+            >
               <div className="text-[20px] font-semibold tracking-tight text-[#0e0e0e]">{m.name}</div>
               <div className="mt-1 text-[13.5px] uppercase tracking-[0.06em] text-[#ef7a2c]">{m.role}</div>
               <p className="mt-4 text-[14px] leading-[1.6] text-[#3a3a38]">{m.bio}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* Timeline */}
       <section className="mt-24">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Histoire</div>
-        <h2
-          className="mt-3 font-display text-[#0e0e0e]"
-          style={{ fontSize: "clamp(32px, 4.5vw, 64px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
-        >
-          Douze années, à voix basse.
-        </h2>
-        <div className="mt-10 grid grid-cols-1 divide-y divide-black/10 border-y border-black/10">
+        <Reveal>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Histoire</div>
+          <h2
+            className="mt-3 font-display text-[#0e0e0e]"
+            style={{ fontSize: "clamp(32px, 4.5vw, 64px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
+          >
+            Douze années, à voix basse.
+          </h2>
+        </Reveal>
+        <Reveal stagger className="mt-10 grid grid-cols-1">
           {milestones.map((m) => (
             <div key={m.y} className="grid grid-cols-12 gap-6 py-7">
               <div className="col-span-3 font-display text-[28px] font-bold text-[#0e0e0e] md:col-span-2">
@@ -120,7 +131,7 @@ export default function Studio() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
     </main>
   );

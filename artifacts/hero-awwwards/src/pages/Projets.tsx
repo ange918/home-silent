@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { projects, type Project } from "@/data/projects";
+import Reveal from "@/components/Reveal";
 
 const categories = ["Tout", "Résidentiel", "Hôtellerie", "Bureaux", "Mobilier"] as const;
 
@@ -11,11 +12,13 @@ export default function Projets() {
     active === "Tout" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <main className="mx-auto max-w-[1400px] px-6 pt-12">
+    <main className="anim-page mx-auto max-w-[1400px] px-6 pt-12">
       <div className="text-center">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Réalisations</div>
+        <div className="anim-up text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">
+          Réalisations
+        </div>
         <h1
-          className="mt-3 font-display text-[#0e0e0e]"
+          className="anim-hero mt-3 font-display text-[#0e0e0e]"
           style={{
             fontSize: "clamp(48px, 9vw, 156px)",
             lineHeight: 0.95,
@@ -26,19 +29,19 @@ export default function Projets() {
         >
           PROJETS
         </h1>
-        <p className="mx-auto mt-6 max-w-[600px] text-[15.5px] leading-[1.55] text-[#3a3a38]">
+        <p className="anim-up delay-300 mx-auto mt-6 max-w-[600px] text-[15.5px] leading-[1.55] text-[#3a3a38]">
           Une sélection de lieux conçus depuis 2014. Chaque projet est singulier ; tous partagent
           la même recherche d'évidence.
         </p>
       </div>
 
       {/* Filters */}
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+      <div className="anim-up delay-400 mt-10 flex flex-wrap items-center justify-center gap-2">
         {categories.map((c) => (
           <button
             key={c}
             onClick={() => setActive(c)}
-            className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-colors ${
+            className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-all duration-300 hover:-translate-y-[1px] ${
               active === c
                 ? "border-[#111] bg-[#111] text-white"
                 : "border-black/15 bg-white text-[#111] hover:bg-black/5"
@@ -50,8 +53,12 @@ export default function Projets() {
         ))}
       </div>
 
-      {/* Grid */}
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {/* Grid (re-key on filter so cards re-stagger when filter changes) */}
+      <Reveal
+        key={active}
+        stagger
+        className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
+      >
         {list.map((p) => (
           <article
             key={p.slug}
@@ -89,17 +96,18 @@ export default function Projets() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
 
-      <div className="mt-16 flex justify-center">
+      <Reveal className="mt-16 flex justify-center">
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-[#111] px-6 py-3 text-[14px] font-semibold text-white hover:bg-black/80"
+          className="group inline-flex items-center gap-2 rounded-full bg-[#111] px-6 py-3 text-[14px] font-semibold text-white transition-transform duration-300 hover:-translate-y-[1px] hover:bg-black/80"
           data-testid="link-projets-cta"
         >
-          Confier votre lieu au studio <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
+          Confier votre lieu au studio
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2.5} />
         </Link>
-      </div>
+      </Reveal>
     </main>
   );
 }

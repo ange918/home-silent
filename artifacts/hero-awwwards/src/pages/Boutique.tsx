@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 type Item = {
   name: string;
   type: string;
@@ -60,25 +62,31 @@ const items: Item[] = [
 
 export default function Boutique() {
   return (
-    <main className="mx-auto max-w-[1400px] px-6 pt-12">
+    <main className="anim-page mx-auto max-w-[1400px] px-6 pt-12">
       <div className="text-center">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Mobilier d'édition</div>
+        <div className="anim-up text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">
+          Mobilier d'édition
+        </div>
         <h1
-          className="mt-3 font-display text-[#0e0e0e]"
+          className="anim-hero mt-3 font-display text-[#0e0e0e]"
           style={{ fontSize: "clamp(48px, 9vw, 156px)", lineHeight: 0.95, letterSpacing: "-0.04em", fontWeight: 900 }}
           data-testid="text-page-title"
         >
           BOUTIQUE
         </h1>
-        <p className="mx-auto mt-6 max-w-[600px] text-[15.5px] leading-[1.55] text-[#3a3a38]">
+        <p className="anim-up delay-300 mx-auto mt-6 max-w-[600px] text-[15.5px] leading-[1.55] text-[#3a3a38]">
           Une trentaine de pièces dessinées par le studio, fabriquées en France, en éditions courtes
           ou sur commande. Délais de fabrication : 6 à 14 semaines.
         </p>
       </div>
 
-      <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <Reveal stagger className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {items.map((it) => (
-          <article key={it.name} data-testid={`card-item-${it.name.toLowerCase().replace(/\s+/g, "-")}`}>
+          <article
+            key={it.name}
+            className="group"
+            data-testid={`card-item-${it.name.toLowerCase().replace(/\s+/g, "-")}`}
+          >
             <div
               className="relative aspect-[4/5] w-full overflow-hidden rounded-[6px]"
               style={{ background: it.palette }}
@@ -86,7 +94,7 @@ export default function Boutique() {
               <span className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-medium text-[#111]">
                 {it.edition}
               </span>
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 text-white">
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 text-white transition-transform duration-700 group-hover:-translate-y-1">
                 <div className="font-display text-[44px] font-black leading-none tracking-tight">
                   {it.name.split(" ")[0]}
                 </div>
@@ -104,11 +112,11 @@ export default function Boutique() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
 
-      <section className="mt-24 grid grid-cols-1 gap-10 rounded-[8px] bg-white p-10 md:grid-cols-12">
+      <Reveal as="section" className="mt-24 grid grid-cols-1 gap-10 rounded-[8px] bg-white p-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <div className="text-[12px] uppercase tracking-[0.18em] text-[#ef7a2c]">— Sur mesure</div>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#ef7a2c]">Sur mesure</div>
           <h3
             className="mt-3 font-display text-[#0e0e0e]"
             style={{ fontSize: "clamp(28px, 3.4vw, 44px)", lineHeight: 1.1, letterSpacing: "-0.025em", fontWeight: 700 }}
@@ -122,11 +130,14 @@ export default function Boutique() {
             murale, banquette d'entrée, table de famille. Trois rendez-vous suffisent en général :
             écoute, esquisse, validation. Délais de 8 à 16 semaines selon les ateliers.
           </p>
-          <button className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#111] px-5 py-3 text-[13px] font-semibold text-white" data-testid="button-custom">
+          <button
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#111] px-5 py-3 text-[13px] font-semibold text-white transition-transform duration-300 hover:-translate-y-[1px] hover:bg-black/80"
+            data-testid="button-custom"
+          >
             Demander un devis sur mesure
           </button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

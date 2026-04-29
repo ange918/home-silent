@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { projects, journalPosts, services } from "@/data/projects";
+import Reveal from "@/components/Reveal";
 
 type TeamMember = {
   name: string;
@@ -35,7 +36,7 @@ function Hero() {
   const featured = projects[0];
   return (
     <section className="mx-auto max-w-[1400px] px-6 pt-2">
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[12.5px] font-medium text-[#3a3a38]">
+      <div className="anim-up mt-10 flex flex-wrap items-center justify-center gap-3 text-[12.5px] font-medium text-[#3a3a38]">
         <span>Studio d'architecture intérieure</span>
         <span className="inline-flex items-center rounded-full border border-black/15 bg-white px-3 py-[5px] text-[12px] font-medium text-[#111]">
           Paris · Lyon · Depuis 2014
@@ -46,7 +47,7 @@ function Hero() {
       </div>
 
       <h1
-        className="font-display mt-6 text-center text-[#0e0e0e]"
+        className="anim-hero font-display mt-6 text-center text-[#0e0e0e]"
         style={{
           fontSize: "clamp(56px, 11.5vw, 188px)",
           lineHeight: 0.92,
@@ -58,14 +59,14 @@ function Hero() {
         MAISON SILENCIEUSE
       </h1>
 
-      <p className="mx-auto mt-7 max-w-[640px] text-center text-[15.5px] leading-[1.55] text-[#3a3a38]">
+      <p className="anim-up delay-300 mx-auto mt-7 max-w-[640px] text-center text-[15.5px] leading-[1.55] text-[#3a3a38]">
         Nous dessinons des intérieurs habités, taillés à la lumière et au geste juste.
         Maisons de famille, hôtels confidentiels et lieux de travail au calme retrouvé.
       </p>
 
-      <div className="mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[15px] font-semibold text-[#111]">
+      <div className="anim-up delay-400 mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[15px] font-semibold text-[#111]">
         {team.map((m) => (
-          <a key={m.name} href="#" className="group inline-flex items-center gap-2.5">
+          <a key={m.name} href="#" className="group inline-flex items-center gap-2.5 transition-transform hover:-translate-y-[1px]">
             <Avatar m={m} />
             <span className="underline decoration-[#111] decoration-1 underline-offset-[5px] group-hover:decoration-black/40">
               {m.name}
@@ -80,7 +81,7 @@ function Hero() {
       </div>
 
       {/* Featured project banner */}
-      <div className="mt-12">
+      <div className="anim-clip delay-500 mt-12">
         <div
           className="relative mx-auto h-[420px] w-full max-w-[1320px] overflow-hidden rounded-t-[6px]"
           style={{ background: featured.palette }}
@@ -106,16 +107,16 @@ function Hero() {
               M
             </span>
             {["Résidentiel", "Hôtellerie", "Bureaux", "Mobilier", "Recherche"].map((label) => (
-              <button key={label} className="rounded-full px-3.5 py-2 text-white/90 hover:bg-white/10">
+              <button key={label} className="rounded-full px-3.5 py-2 text-white/90 transition-colors hover:bg-white/10">
                 {label}
               </button>
             ))}
             <Link
               href="/projets"
-              className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#111]"
+              className="group ml-1 inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#111]"
             >
               Voir le projet
-              <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2.5} />
             </Link>
           </div>
 
@@ -134,9 +135,9 @@ function Hero() {
 function Manifesto() {
   return (
     <section className="mx-auto mt-32 max-w-[1400px] px-6">
-      <div className="grid grid-cols-1 gap-14 md:grid-cols-12">
+      <Reveal className="grid grid-cols-1 gap-14 md:grid-cols-12">
         <div className="md:col-span-3">
-          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Manifeste</div>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Manifeste</div>
           <div className="mt-3 text-[14px] text-[#3a3a38]">N° 01 / 04</div>
         </div>
         <div className="md:col-span-9">
@@ -156,7 +157,7 @@ function Manifesto() {
             </span>
           </p>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -165,9 +166,9 @@ function Projects() {
   const items = projects.slice(0, 6);
   return (
     <section className="mx-auto mt-32 max-w-[1400px] px-6">
-      <div className="flex items-end justify-between gap-6">
+      <Reveal className="flex items-end justify-between gap-6">
         <div>
-          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Projets sélectionnés</div>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Projets sélectionnés</div>
           <h2
             className="mt-3 font-display text-[#0e0e0e]"
             style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
@@ -177,14 +178,15 @@ function Projects() {
         </div>
         <Link
           href="/projets"
-          className="hidden items-center gap-1.5 text-[13px] font-medium text-[#111] underline underline-offset-[5px] md:inline-flex"
+          className="group hidden items-center gap-1.5 text-[13px] font-medium text-[#111] underline underline-offset-[5px] md:inline-flex"
           data-testid="link-all-projects"
         >
-          Voir les 128 projets <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+          Voir les 128 projets
+          <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2.5} />
         </Link>
-      </div>
+      </Reveal>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <Reveal stagger className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((p, i) => (
           <Link
             key={p.slug}
@@ -203,7 +205,7 @@ function Projects() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white">
-                <div>
+                <div className="translate-y-1 transition-transform duration-500 group-hover:translate-y-0">
                   <div className="text-[11px] uppercase tracking-[0.16em] text-white/80">
                     {p.category} · {p.year}
                   </div>
@@ -217,7 +219,7 @@ function Projects() {
             </div>
           </Link>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -226,8 +228,8 @@ function Approach() {
   return (
     <section className="mx-auto mt-32 max-w-[1400px] px-6">
       <div className="grid grid-cols-1 gap-14 md:grid-cols-12">
-        <div className="md:col-span-4">
-          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Approche</div>
+        <Reveal className="md:col-span-4">
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Approche</div>
           <h2
             className="mt-3 font-display text-[#0e0e0e]"
             style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
@@ -238,11 +240,11 @@ function Approach() {
             Chaque projet est conduit par un binôme architecte–scénographe, soutenu par notre
             atelier mobilier et notre réseau d'artisans français.
           </p>
-        </div>
+        </Reveal>
         <div className="md:col-span-8">
-          <div className="grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2">
+          <Reveal stagger className="grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2">
             {services.map((s) => (
-              <div key={s.n} className="bg-[#f3f3f1] p-8">
+              <div key={s.n} className="group bg-[#f3f3f1] p-8 transition-colors duration-500 hover:bg-white">
                 <div className="text-[12px] font-semibold tracking-[0.18em] text-[#ef7a2c]">{s.n}</div>
                 <div className="mt-3 text-[20px] font-semibold tracking-tight text-[#0e0e0e]">
                   {s.title}
@@ -250,7 +252,7 @@ function Approach() {
                 <p className="mt-3 text-[14.5px] leading-[1.6] text-[#3a3a38]">{s.body}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -266,7 +268,7 @@ function Numbers() {
   ];
   return (
     <section className="mx-auto mt-32 max-w-[1400px] px-6">
-      <div className="grid grid-cols-2 gap-6 border-y border-black/10 py-12 md:grid-cols-4">
+      <Reveal stagger className="grid grid-cols-2 gap-6 py-12 md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.l}>
             <div
@@ -278,7 +280,7 @@ function Numbers() {
             <div className="mt-2 text-[13px] uppercase tracking-[0.14em] text-[#7a7a78]">{s.l}</div>
           </div>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -286,9 +288,9 @@ function Numbers() {
 function JournalPreview() {
   return (
     <section className="mx-auto mt-32 max-w-[1400px] px-6">
-      <div className="flex items-end justify-between">
+      <Reveal className="flex items-end justify-between">
         <div>
-          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Journal</div>
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Journal</div>
           <h2
             className="mt-3 font-display text-[#0e0e0e]"
             style={{ fontSize: "clamp(36px, 5vw, 72px)", lineHeight: 1, letterSpacing: "-0.035em", fontWeight: 800 }}
@@ -296,12 +298,13 @@ function JournalPreview() {
             Carnets du studio.
           </h2>
         </div>
-        <Link href="/journal" className="hidden items-center gap-1.5 text-[13px] font-medium text-[#111] underline underline-offset-[5px] md:inline-flex">
-          Tout lire <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+        <Link href="/journal" className="group hidden items-center gap-1.5 text-[13px] font-medium text-[#111] underline underline-offset-[5px] md:inline-flex">
+          Tout lire
+          <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-45" strokeWidth={2.5} />
         </Link>
-      </div>
+      </Reveal>
 
-      <div className="mt-10 grid grid-cols-1 divide-y divide-black/10 border-y border-black/10">
+      <Reveal stagger className="mt-10 grid grid-cols-1">
         {journalPosts.map((p) => (
           <Link
             key={p.slug}
@@ -316,7 +319,7 @@ function JournalPreview() {
               </span>
             </div>
             <div className="col-span-12 md:col-span-7">
-              <div className="text-[22px] font-semibold tracking-tight text-[#0e0e0e] group-hover:text-[#ef7a2c]">
+              <div className="text-[22px] font-semibold tracking-tight text-[#0e0e0e] transition-colors group-hover:text-[#ef7a2c]">
                 {p.title}
               </div>
               <p className="mt-2 max-w-[600px] text-[14.5px] leading-[1.55] text-[#3a3a38]">
@@ -328,7 +331,7 @@ function JournalPreview() {
             </div>
           </Link>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -342,24 +345,36 @@ function Press() {
     "Côté Maison",
     "Dezeen",
     "Elle Décoration",
+    "Frame Magazine",
+    "Ideat",
   ];
+  // Duplicate the list so the marquee loops seamlessly
+  const loop = [...press, ...press];
   return (
-    <section className="mx-auto mt-32 max-w-[1400px] px-6">
-      <div className="text-center">
-        <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">— Ils en parlent</div>
-        <h2
-          className="mt-3 font-display text-[#0e0e0e]"
-          style={{ fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.05, letterSpacing: "-0.03em", fontWeight: 700 }}
-        >
-          Vu dans la presse.
-        </h2>
+    <section className="mt-32">
+      <div className="mx-auto max-w-[1400px] px-6">
+        <Reveal className="text-center">
+          <div className="text-[12px] uppercase tracking-[0.18em] text-[#7a7a78]">Ils en parlent</div>
+          <h2
+            className="mt-3 font-display text-[#0e0e0e]"
+            style={{ fontSize: "clamp(28px, 3.5vw, 48px)", lineHeight: 1.05, letterSpacing: "-0.03em", fontWeight: 700 }}
+          >
+            Vu dans la presse.
+          </h2>
+        </Reveal>
       </div>
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-[18px] font-semibold tracking-tight text-[#7a7a78]">
-        {press.map((p) => (
-          <span key={p} className="opacity-70 transition-opacity hover:opacity-100 hover:text-[#111]">
-            {p}
-          </span>
-        ))}
+
+      <div className="marquee-mask mt-10 overflow-hidden">
+        <div className="marquee-track">
+          {loop.map((p, i) => (
+            <span
+              key={`${p}-${i}`}
+              className="mx-10 shrink-0 text-[22px] font-semibold tracking-tight text-[#7a7a78] transition-colors hover:text-[#111]"
+            >
+              {p}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -368,28 +383,30 @@ function Press() {
 function Quote() {
   return (
     <section className="mx-auto mt-32 max-w-[1100px] px-6">
-      <p
-        className="text-center font-display text-[#0e0e0e]"
-        style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1.15, letterSpacing: "-0.025em", fontWeight: 600 }}
-      >
-        "Maison Silencieuse a transformé une bastide poussiéreuse en lieu où l'on respire.
-        Nous y revenons comme on rentre chez soi — la première fois."
-      </p>
-      <div className="mt-8 flex items-center justify-center gap-3 text-[13px] text-[#3a3a38]">
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1f3b2d] text-[10px] font-semibold text-white">
-          MC
-        </span>
-        <span className="font-semibold text-[#111]">Marguerite Chazal</span>
-        <span>—</span>
-        <span>propriétaire, Villa Ocra</span>
-      </div>
+      <Reveal>
+        <p
+          className="text-center font-display text-[#0e0e0e]"
+          style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1.15, letterSpacing: "-0.025em", fontWeight: 600 }}
+        >
+          "Maison Silencieuse a transformé une bastide poussiéreuse en lieu où l'on respire.
+          Nous y revenons comme on rentre chez soi — la première fois."
+        </p>
+        <div className="mt-8 flex items-center justify-center gap-3 text-[13px] text-[#3a3a38]">
+          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1f3b2d] text-[10px] font-semibold text-white">
+            MC
+          </span>
+          <span className="font-semibold text-[#111]">Marguerite Chazal</span>
+          <span>·</span>
+          <span>propriétaire, Villa Ocra</span>
+        </div>
+      </Reveal>
     </section>
   );
 }
 
 export default function Home() {
   return (
-    <main>
+    <main className="anim-page">
       <Hero />
       <Manifesto />
       <Projects />
