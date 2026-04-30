@@ -1,6 +1,5 @@
 import { services } from "@/data/projects";
 import Reveal from "@/components/Reveal";
-import atelierImg from "@assets/generated_images/atelier-bureau.png";
 
 type Member = {
   name: string;
@@ -57,7 +56,7 @@ export default function Studio() {
       {/* Hero image */}
       <div className="anim-up delay-500 mt-12 overflow-hidden rounded-[6px]">
         <img
-          src={atelierImg}
+          src="/generated_images/atelier-bureau.png"
           alt="Vue de l'atelier du studio"
           className="h-[420px] w-full object-cover md:h-[520px]"
         />

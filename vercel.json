@@ -1,3 +1,6 @@
 {
-  "installCommand": "pnpm install --no-frozen-lockfile"
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @workspace/hero-awwwards run build",
+  "outputDirectory": "artifacts/hero-awwwards/dist/public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
